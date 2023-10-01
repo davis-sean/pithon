@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 import argparse
-import pygame
+import pygame import mixer
 from gpiozero import Button
 import os
 import random
@@ -12,15 +12,14 @@ parser.add_argument('path', metavar='Path', help='File Path')
 args = parser.parse_args()
 dirPath =  args.path
 
-pygame.mixer.pre_init(44100, 16, 2, 4096)
-pygame.init()
-
-def playSound(file):
-    os.getcwd()
-    print(f"Calling {file} for playback!")
-    sound = pygame.mixer.Sound(file)
-    pygame.mixer.init()
-    sound.play()
+def playSound(fileName):
+    print(f"Calling {fileName} for playback!")
+    mixer.init()
+    mixer.music.load(fileName)
+    mixer.music.set_volume(0.7)
+    mixer.music.play()
+    while mixer.music.get_busy() == true:
+        pass
 
 button = Button("GPIO17")
 dirArray = []
