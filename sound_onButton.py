@@ -49,7 +49,7 @@ while True:
             previousSounds.insert(0, randomNum)
             previousSounds = previousSounds[:-1]
             print(f"Selected {fileName} for playback!")
-            playsound(fileName)
+            playSound(fileName)
     else:
         value = 1
         # do nothing
