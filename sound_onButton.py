@@ -16,6 +16,7 @@ pygame.mixer.pre_init(44100, 16, 2, 4096)
 pygame.init()
 
 def playSound(file):
+    os.getcwd()
     print(f"Calling {file} for playback!")
     sound = pygame.mixer.Sound(file)
     pygame.mixer.init()
