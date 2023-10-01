@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 import argparse
-import pygame
+from playsound import playsound
 from gpiozero import Button
 import os
 import random
@@ -15,15 +15,6 @@ dirPath =  args.path
 button = Button("GPIO17")
 dirArray = []
 previousSounds = [1 , 2 , 3]
-
-def playSound(file):
-
-    pygame.mixer.init()
-    pygame.mixer.music.load(file)
-    pygame.mixer.music.play()
-
-    while pygame.mixer.music.get_busy() == True:
-        pass
 
 print(f"Building file list...")
 
@@ -52,7 +43,7 @@ while True:
             previousSounds.insert(0, randomNum)
             previousSounds = previousSounds[:-1]
             print(f"Selected {fileName} for playback!")
-            playSound(fileName)
+            playsound(fileName)
     else:
         value = 1
         # do nothing
