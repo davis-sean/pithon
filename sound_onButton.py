@@ -16,6 +16,14 @@ button = Button("GPIO17")
 dirArray = []
 previousSounds = [1 , 2 , 3]
 
+def playSound(file):
+	pygame.mixer.init()
+	pygame.mixer.music.load(file)
+	pygame.mixer.music.play()
+
+	while pygame.mixer.music.get_busy() == True:
+		pass
+
 print(f"Building file list...")
 
 for root, dirs, files in os.walk(dirPath):
@@ -41,8 +49,8 @@ while True:
             fileName = dirArray[randomNum]
             previousSounds.insert(0, randomNum)
             previousSounds = previousSounds[:-1]
-            print(f"Prevous sounds: {previousSounds}")
             print(f"Selected {fileName} for playback!")
+            playSound(dirArray[randomNum])
     else:
         value = 1
         # do nothing
