@@ -22,7 +22,6 @@ for root, dirs, files in os.walk(dirPath):
     for file in files:
         if file.endswith(".wav"):
             filePath = "\"" + os.path.join(dirPath, file) + "\""
-            print(filePath)
             dirArray.append(filePath)
 
 arrayLength = int(len(dirArray))
@@ -38,10 +37,13 @@ while True:
     if button.is_pressed:
         print(f"Button Detected!")
         randomNum = random.randint(0, len(dirArray) - 1)
-        fileName = dirArray[randomNum]
-        print(f"Selected {fileName} for playback!")
+        if randomNum not in previousSounds:
+            fileName = dirArray[randomNum]
+            previousSounds.insert(0, randomNum)
+            previousSounds = previousSounds[:-1]
+            print(f"Prevous sounds: {previousSounds}")
+            print(f"Selected {fileName} for playback!")
     else:
-        value = 1
         # do nothing
 
     
