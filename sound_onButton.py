@@ -15,6 +15,7 @@ dirPath =  args.path
 pygame.init()
 
 def playSound(file):
+    print(f"Calling {file} for playback!")
     sound = pygame.mixer.Sound(file)
     sound.play()
 
