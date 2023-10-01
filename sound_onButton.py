@@ -28,6 +28,10 @@ for root, dirs, files in os.walk(dirPath):
 arrayLength = int(len(dirArray))
 print(f"{arrayLength} files discovered.")
 
+if arrayLength = 0:
+    print(f"No Files Detected!")
+    exit()
+
 print(f"Watching for Button!")
 
 while True:
