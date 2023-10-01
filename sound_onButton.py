@@ -3,7 +3,6 @@
 import argparse
 import pygame
 from gpiozero import Button
-from signal import pause
 import os
 import random
 
