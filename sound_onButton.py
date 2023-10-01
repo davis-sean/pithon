@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 import argparse
-from playsound import playsound
+import pygame
 from gpiozero import Button
 import os
 import random
@@ -11,6 +11,12 @@ parser.add_argument('path', metavar='Path', help='File Path')
 
 args = parser.parse_args()
 dirPath =  args.path
+
+pygame.init()
+
+def playSound(file):
+    sound = pygame.mixer.Sound(file)
+    sound.play()
 
 button = Button("GPIO17")
 dirArray = []
