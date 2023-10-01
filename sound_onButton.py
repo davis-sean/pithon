@@ -18,6 +18,7 @@ pygame.init()
 def playSound(file):
     print(f"Calling {file} for playback!")
     sound = pygame.mixer.Sound(file)
+    pygame.mixer.init()
     sound.play()
 
 button = Button("GPIO17")
