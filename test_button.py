@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 
 import argparse
-import pygame
 from gpiozero import Button
 from signal import pause
 
