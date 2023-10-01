@@ -37,6 +37,7 @@ while True:
         fileName = dirArray[randomNum]
         print(f"Selected {fileName} for playback!")
     else:
+        value = 1
         # do nothing
 
     
