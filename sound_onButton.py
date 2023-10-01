@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 import argparse
-import pygame import mixer
+from pygame import mixer
 from gpiozero import Button
 import os
 import random
