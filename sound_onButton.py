@@ -31,8 +31,8 @@ print(f"{arrayLength} files discovered.")
 print(f"Watching for Button!")
 
 while True:
-	if button.is_pressed:
-	    print(f"Button Detected!")
+    if button.is_pressed:
+        print(f"Button Detected!")
         randomNum = random.randint(0, len(dirArray) - 1)
         fileName = dirArray[randomNum]
         print(f"Selected {fileName} for playback!")
