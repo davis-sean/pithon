@@ -17,12 +17,13 @@ dirArray = []
 previousSounds = [1 , 2 , 3]
 
 def playSound(file):
-	pygame.mixer.init()
-	pygame.mixer.music.load(file)
-	pygame.mixer.music.play()
+    
+    pygame.mixer.init()
+    pygame.mixer.music.load(file)
+    pygame.mixer.music.play()
 
-	while pygame.mixer.music.get_busy() == True:
-		pass
+    while pygame.mixer.music.get_busy() == True:
+        pass
 
 print(f"Building file list...")
 
