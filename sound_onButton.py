@@ -44,6 +44,7 @@ while True:
             print(f"Prevous sounds: {previousSounds}")
             print(f"Selected {fileName} for playback!")
     else:
+        value = 1
         # do nothing
 
     
