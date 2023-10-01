@@ -13,13 +13,6 @@ response =  args.input
 
 button = Button("GPIO2")
 
-def playSound(file):
-	pygame.mixer.init()
-	pygame.mixer.music.load(file)
-	pygame.mixer.music.play()
-
-	while pygame.mixer.music.get_busy() == True:
-		pass
-
-button.wait_for_press()
-playSound(response)
+while true:
+	button.wait_for_press()
+	print(f"Button Detected")
