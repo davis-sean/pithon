@@ -28,7 +28,7 @@ print(f"Building file list...")
 for root, dirs, files in os.walk(dirPath):
     for file in files:
         if file.endswith(".wav"):
-            filePath = "\"" + os.path.join(dirPath, file) + "\""
+            filePath = "\'" + os.path.join(dirPath, file) + "\'"
             # filePath = os.path.join(dirPath, file)
             dirArray.append(filePath)
 
