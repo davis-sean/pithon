@@ -10,7 +10,7 @@ parser = argparse.ArgumentParser(description='Directory for Sound Files')
 parser.add_argument('path', metavar='Path', help='File Path')
 
 args = parser.parse_args()
-response =  args.path
+dirPath =  args.path
 
 button = Button("GPIO17")
 dirArray = []
