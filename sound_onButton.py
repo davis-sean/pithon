@@ -18,7 +18,7 @@ def playSound(fileName):
     mixer.music.load(fileName)
     mixer.music.set_volume(0.7)
     mixer.music.play()
-    while mixer.music.get_busy() == true:
+    while mixer.music.get_busy() == True:
         pass
 
 button = Button("GPIO17")
