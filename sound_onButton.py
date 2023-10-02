@@ -48,7 +48,7 @@ while True:
         print(f"Button Detected!")
         randomNum = random.randint(0, len(dirArray) - 1)
         if randomNum not in previousSounds:
-            fileName = dirArray[randomNum]
+            fileName = r'dirArray[randomNum]'
             previousSounds.insert(0, randomNum)
             previousSounds = previousSounds[:-1]
             print(f"Selected {fileName} for playback!")
