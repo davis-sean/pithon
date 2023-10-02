@@ -5,6 +5,7 @@ import argparse
 from gpiozero import Button
 import os
 import random
+from time import sleep
 
 parser = argparse.ArgumentParser(description='Directory for Sound Files')
 parser.add_argument('path', metavar='Path', help='File Path')
@@ -62,6 +63,7 @@ while True:
     else:
         value = 1
         # do nothing
+    sleep(1)
 
     
 
