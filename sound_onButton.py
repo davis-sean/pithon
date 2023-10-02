@@ -1,12 +1,11 @@
 #!/usr/bin/env python3
 
 import argparse
-#from pygame import mixer
+import pygame
 from gpiozero import Button
 import os
 import random
 from time import sleep
-from subprocess import Popen, PIPE
 
 parser = argparse.ArgumentParser(description='Directory for Sound Files')
 parser.add_argument('path', metavar='Path', help='File Path')
@@ -14,15 +13,7 @@ parser.add_argument('path', metavar='Path', help='File Path')
 args = parser.parse_args()
 dirPath =  args.path
 
-#def playSound(fileName):
-#    print(f"Calling {fileName} for playback!")
-#    mixer.init()
-#    mixer.music.load(fileName)
-#    mixer.music.set_volume(0.7)
-#    mixer.music.play()
-#    while mixer.music.get_busy() == True:
-#        pass
-
+pygame.init()
 button = Button("GPIO17")
 dirArray = []
 previousSounds = [1 , 2 , 3]
@@ -54,14 +45,8 @@ while True:
             previousSounds.insert(0, randomNum)
             previousSounds = previousSounds[:-1]
             print(f"Selected {fileName} for playback!")
-            sound = Popen(['mpg321', '-R', '-F', 'testPlayer'], stdout=PIPE, stdin=PIPE)
-            sound.stdin.write(b'LOAD music/' + bytes(fileName, encoding='utf8') + b'\n')
-            # mixer.init()
-            # mixer.music.load(fileName)
-            # mixer.music.set_volume(0.7)
-            # mixer.music.play()
-            # while mixer.music.get_busy() == True:
-            #     pass
+            sound = pygame.mixer.Sound(fileName)
+            sound.play
     else:
         value = 1
         # do nothing
