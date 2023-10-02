@@ -15,10 +15,10 @@ dirPath =  args.path
 def playSound(fileName):
     print(f"Calling {fileName} for playback!")
     mixer.init()
-    mixer.Sound(fileName)
-    mixer.Sound.set_volume(0.7)
-    mixer.Sound.play()
-    while mixer.Sound.get_busy() == True:
+    mixer.music.load(fileName)
+    mixer.music.set_volume(0.7)
+    mixer.music.play()
+    while mixer.music.get_busy() == True:
         pass
 
 button = Button("GPIO17")
