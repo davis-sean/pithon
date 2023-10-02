@@ -18,7 +18,6 @@ pygame.init()
 button = Button("GPIO17")
 dirArray = []
 previousSounds = [1 , 2 , 3]
-os.chdir(r"/")
 
 print(f"Building file list...")
 
@@ -48,7 +47,7 @@ while True:
             previousSounds.insert(0, randomNum)
             previousSounds = previousSounds[:-1]
             print(f"Selected /home/davis-admin/pithon/sounds/ozfire.wav for playback!")
-            sound = pygame.mixer.Sound("/home/davis-admin/pithon/sounds/ozfire.wav")
+            sound = pygame.mixer.Sound("./sounds/ozfire.wav")
             sound.play
     else:
         value = 1
