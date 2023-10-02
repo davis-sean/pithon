@@ -17,6 +17,7 @@ pygame.init()
 button = Button("GPIO17")
 dirArray = []
 previousSounds = [1 , 2 , 3]
+os.chdir(r"/")
 
 print(f"Building file list...")
 
