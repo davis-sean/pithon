@@ -55,7 +55,7 @@ while True:
             previousSounds = previousSounds[:-1]
             print(f"Selected {fileName} for playback!")
             sound = Popen(['mpg321', '-R', '-F', 'testPlayer'], stdout=PIPE, stdin=PIPE)
-            sound.stdin.write(b'LOAD music/' + bytes(fileName) + b'\n')
+            sound.stdin.write(b'LOAD music/' + bytes(fileName, encoding='utf8') + b'\n')
             # mixer.init()
             # mixer.music.load(fileName)
             # mixer.music.set_volume(0.7)
