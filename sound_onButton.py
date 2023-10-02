@@ -14,6 +14,7 @@ parser.add_argument('path', metavar='Path', help='File Path')
 args = parser.parse_args()
 dirPath =  args.path
 
+pygame.mixer.pre_init(44100, 16, 2, 4096)
 pygame.init()
 button = Button("GPIO17")
 dirArray = []
