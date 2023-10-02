@@ -6,6 +6,7 @@ from gpiozero import Button
 import os
 import random
 from time import sleep
+import textwrap
 
 parser = argparse.ArgumentParser(description='Directory for Sound Files')
 parser.add_argument('path', metavar='Path', help='File Path')
