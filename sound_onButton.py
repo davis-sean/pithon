@@ -6,7 +6,7 @@ from gpiozero import Button
 import os
 import random
 from time import sleep
-import subprocess
+from subprocess import Popen, PIPE
 
 parser = argparse.ArgumentParser(description='Directory for Sound Files')
 parser.add_argument('path', metavar='Path', help='File Path')
