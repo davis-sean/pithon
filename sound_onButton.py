@@ -53,7 +53,7 @@ while True:
             previousSounds.insert(0, randomNum)
             previousSounds = previousSounds[:-1]
             print(f"Selected {fileName} for playback!")
-            os.system('mpg321 {fileName} &')
+            os.system('mpg321 ' + fileName +' &')
             # mixer.init()
             # mixer.music.load(fileName)
             # mixer.music.set_volume(0.7)
