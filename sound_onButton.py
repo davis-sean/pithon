@@ -47,8 +47,8 @@ while True:
             fileName.strip()
             previousSounds.insert(0, randomNum)
             previousSounds = previousSounds[:-1]
-            print(f"Selected FireOnHigh for playback!")
-            pygame.mixer.music.load("/home/davis-admin/pithon/fire.wav")
+            print(f"Selected {fileName} for playback!")
+            pygame.mixer.music.load(fileName)
             pygame.mixer.music.play()
             while pygame.mixer.music.get_busy() == True:
                 pass
