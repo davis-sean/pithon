@@ -15,7 +15,7 @@ args = parser.parse_args()
 dirPath =  args.path
 
 # pygame.mixer.pre_init(44100, 16, 2, 4096)
-pygame.init()
+pygame.mixer.init()
 button = Button("GPIO17")
 dirArray = []
 previousSounds = [1 , 2 , 3]
@@ -48,9 +48,9 @@ while True:
             previousSounds.insert(0, randomNum)
             previousSounds = previousSounds[:-1]
             print(f"Selected FireOnHigh for playback!")
-            sound = pygame.mixer.music.load("/home/davis-admin/pithon/fire.wav")
-            sound.play
-            while sound.get_busy() == True:
+            pygame.mixer.music.load("/home/davis-admin/pithon/fire.wav")
+            pygame.mixer.music.play()
+            while pygame.mixer.music.get_busy() == True:
                 pass
     else:
         value = 1
