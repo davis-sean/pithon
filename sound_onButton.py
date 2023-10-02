@@ -47,8 +47,8 @@ while True:
             fileName.strip()
             previousSounds.insert(0, randomNum)
             previousSounds = previousSounds[:-1]
-            print(f"Selected {fileName} for playback!")
-            sound = pygame.mixer.Sound(fileName)
+            print(f"Selected /home/davis-admin/pithon/sounds/ozfire.wav for playback!")
+            sound = pygame.mixer.Sound("/home/davis-admin/pithon/sounds/ozfire.wav")
             sound.play
     else:
         value = 1
