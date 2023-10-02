@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 import argparse
-from pygame import mixer
+#from pygame import mixer
 from gpiozero import Button
 import os
 import random
@@ -12,14 +12,14 @@ parser.add_argument('path', metavar='Path', help='File Path')
 args = parser.parse_args()
 dirPath =  args.path
 
-def playSound(fileName):
-    print(f"Calling {fileName} for playback!")
-    mixer.init()
-    mixer.music.load(fileName)
-    mixer.music.set_volume(0.7)
-    mixer.music.play()
-    while mixer.music.get_busy() == True:
-        pass
+#def playSound(fileName):
+#    print(f"Calling {fileName} for playback!")
+#    mixer.init()
+#    mixer.music.load(fileName)
+#    mixer.music.set_volume(0.7)
+#    mixer.music.play()
+#    while mixer.music.get_busy() == True:
+#        pass
 
 button = Button("GPIO17")
 dirArray = []
@@ -52,12 +52,13 @@ while True:
             previousSounds.insert(0, randomNum)
             previousSounds = previousSounds[:-1]
             print(f"Selected {fileName} for playback!")
-            mixer.init()
-            mixer.music.load(fileName)
-            mixer.music.set_volume(0.7)
-            mixer.music.play()
-            while mixer.music.get_busy() == True:
-                pass
+            os.system('mpg321 {fileName} &')
+            # mixer.init()
+            # mixer.music.load(fileName)
+            # mixer.music.set_volume(0.7)
+            # mixer.music.play()
+            # while mixer.music.get_busy() == True:
+            #     pass
     else:
         value = 1
         # do nothing
