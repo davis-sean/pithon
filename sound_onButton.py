@@ -48,10 +48,10 @@ while True:
             previousSounds.insert(0, randomNum)
             previousSounds = previousSounds[:-1]
             print(f"Selected FireOnHigh for playback!")
-            sound = pygame.mixer.Sound("/home/davis-admin/pithon/fire.wav")
+            sound = pygame.mixer.music.load("/home/davis-admin/pithon/fire.wav")
             sound.play
-            # while sound.get_busy() == True:
-            #    pass
+            while sound.get_busy() == True:
+                pass
     else:
         value = 1
         # do nothing
