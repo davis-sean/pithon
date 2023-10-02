@@ -6,6 +6,7 @@ from gpiozero import Button
 import os
 import random
 from time import sleep
+import subprocess
 
 parser = argparse.ArgumentParser(description='Directory for Sound Files')
 parser.add_argument('path', metavar='Path', help='File Path')
@@ -53,7 +54,7 @@ while True:
             previousSounds.insert(0, randomNum)
             previousSounds = previousSounds[:-1]
             print(f"Selected {fileName} for playback!")
-            os.system('mpg321 \'' + fileName +'\' &')
+            subprocess.run('mpg321 \'' + fileName +'\' &')
             # mixer.init()
             # mixer.music.load(fileName)
             # mixer.music.set_volume(0.7)
