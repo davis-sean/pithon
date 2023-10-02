@@ -52,7 +52,12 @@ while True:
             previousSounds.insert(0, randomNum)
             previousSounds = previousSounds[:-1]
             print(f"Selected {fileName} for playback!")
-            playSound(fileName)
+            mixer.init()
+            mixer.music.load(fileName)
+            mixer.music.set_volume(0.7)
+            mixer.music.play()
+            while mixer.music.get_busy() == True:
+                pass
     else:
         value = 1
         # do nothing
