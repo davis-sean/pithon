@@ -50,6 +50,8 @@ while True:
             print(f"Selected FireOnHigh for playback!")
             sound = pygame.mixer.Sound("/home/davis-admin/pithon/fire.wav")
             sound.play
+            while sound.get_busy() == True:
+                pass
     else:
         value = 1
         # do nothing
