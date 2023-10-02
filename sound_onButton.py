@@ -48,7 +48,7 @@ while True:
             previousSounds.insert(0, randomNum)
             previousSounds = previousSounds[:-1]
             print(f"Selected FireOnHigh for playback!")
-            sound = pygame.mixer.Sound("/home/davis-admin/pithon/sounds/FireOnHigh.wav")
+            sound = pygame.mixer.Sound("/home/davis-admin/pithon/fire.wav")
             sound.play
     else:
         value = 1
